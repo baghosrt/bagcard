@@ -492,11 +492,14 @@
 <Stats ResetStatistics="0" X_HW_PartResetStatistics="" PacketsSent="0" PacketsReceived="0" BytesSent="0" BytesReceived="0" PacketsLost="0" ReceivePacketLossRate="0" FarEndPacketLossRate="0" ReceiveInterarrivalJitter="0" FarEndInterarrivalJitter="0" RoundTripDelay="0" IncomingCallsReceived="0" IncomingCallsAnswered="0" IncomingCallsConnected="0" IncomingCallsFailed="0" OutgoingCallsAttempted="0" OutgoingCallsAnswered="0" OutgoingCallsConnected="0" OutgoingCallsFailed="0" CallsDropped="0" TotalCallTime="0" ServerDownTime="0" AverageReceiveInterarrivalJitter="0" AverageFarEndInterarrivalJitter="0" AverageRoundTripDelay="0" X_HW_PacketLossRate="0" X_HW_MaxReceiveInterarrivalJitter="0" X_HW_MaxFarEndInterarrivalJitter="0" Overruns="0" Underruns="0" X_HW_RTPErrors="0" X_HW_MaxTimeBetweenRTCPPackets="0" X_HW_CallSetupTimerMax="0" X_HW_AnalogPortReleasesCount="0" X_HW_AnalogPortOffhookTimerMax="0" X_HW_SIPCallFailedToConnectCounter="0" X_HW_SIPCallTimeoutCounter="0" X_HW_SIPCallFailureReceivedCounter="0" X_HW_SIPCallFailedToAuthenticateCounter="0"/>
 <X_HW_CtLastRegisterError Reason="4"/>
 </LineInstance>
-<LineInstance InstanceID="2" Enable="Enabled" DirectoryNumber="" PhyReferenceList="2" X_HW_RtpLoop="Disable" X_HW_Priority="0" Status="" CallState="" X_HW_ServiceState="" X_HW_LastRegisterError="-" X_HW_SubsUAProfile="" X_HW_SubsRegState="" X_HW_Description="">
-<SIP AuthUserName="" AuthPassword="" URI="">
-<X_HW_Digitmap DMName="" DigitMap="" DigitMapStartTimer="20" DigitMapShortTimer="5" DigitMapLongTimer="10"/>
-</SIP>
-<X_HW_H248 LineName=""/>
+<Codec TransmitCodec="" ReceiveCodec="" TransmitBitRate="" ReceiveBitRate="" TransmitSilenceSuppression="" ReceiveSilenceSuppression="" TransmitPacketizationPeriod="">
+<List NumberOfInstances="4">
+<ListInstance InstanceID="1" EntryID="" Codec="" BitRate="" SilenceSuppression="" PacketizationPeriod="20" Enable="1" Priority="2" Codecs="G.711MuLaw"/>
+<ListInstance InstanceID="2" EntryID="" Codec="" BitRate="" SilenceSuppression="" PacketizationPeriod="20" Enable="1" Priority="1" Codecs="G.711ALaw"/>
+<ListInstance InstanceID="3" EntryID="" Codec="" BitRate="" SilenceSuppression="" PacketizationPeriod="20" Enable="1" Priority="3" Codecs="G.729"/>
+<ListInstance InstanceID="4" EntryID="" Codec="" BitRate="" SilenceSuppression="" PacketizationPeriod="20" Enable="1" Priority="4" Codecs="G.722"/>
+</List>
+</Codec>
 <CallingFeatures CallerIDEnable="1" CallerIDNameEnable="0" CallerIDName="" CallWaitingEnable="1" CallForwardUnconditionalEnable="0" CallForwardUnconditionalNumber="" CallForwardOnBusyEnable="0" CallForwardOnBusyNumber="" CallForwardOnNoAnswerEnable="0" CallForwardOnNoAnswerNumber="" CallForwardOnNoAnswerRingCount="10" CallTransferEnable="1" MWIEnable="1" X_HW_MWIMode="Deferred" X_HW_HotlineEnable="0" X_HW_HotlineNumber="" X_HW_HotlineTimer="5" X_HW_3WayEnable="1" X_HW_CallHoldEnable="1" X_HW_ConferenceEnable="1" X_HW_CentrexPrefix="" X_HW_CentrexDialSecondaryEnable="0" X_HW_MCIDEnable="0" X_HW_DigitsSendingMethod="OverlapInDialogue" X_HW_ConferenceFactoryUri="" X_HW_CancelCallWaitingDuringCallEnable="1" DoNotDisturbEnable="0" X_HW_DNDStatus="0" X_HW_HotlineMode="0" X_HW_CLIPEnable="1" X_HW_PBXPrefixEnable="1" ConferenceCallingStatus="" ConferenceCallingSessionCount="0" X_HW_SccClassEnable="1"/>
 <VoiceProcessing TransmitGain="0" ReceiveGain="0" EchoCancellationEnable="1" EchoCancellationInUse="" EchoCancellationTail="32"/>
 <Codec TransmitCodec="" ReceiveCodec="" TransmitBitRate="" ReceiveBitRate="" TransmitSilenceSuppression="" ReceiveSilenceSuppression="" TransmitPacketizationPeriod="">
@@ -1618,6 +1621,11 @@
 <X_HW_LanService HttpUnreachableRedirectEnable="0"/>
 </LANDeviceInstance>
 </LANDevice>
+<X_HW_SIPDigitmap NumberOfInstances="3">
+<X_HW_SIPDigitmapInstance InstanceID="1" DMName="dmmNormal" DigitmapType="Normal" DigitMap="[xABCD].S|[xABCD].#" DigitMapStartTimer="20" DigitMapShortTimer="5" DigitMapLongTimer="10" MatchMode="Default"/>
+<X_HW_SIPDigitmapInstance InstanceID="2" DMName="dmmScc" DigitmapType="SCC" DigitMap="[*#][*#0-9][0-9*].#|##|**xx|#*#" DigitMapStartTimer="20" DigitMapShortTimer="5" DigitMapLongTimer="10" MatchMode="Default"/>
+<X_HW_SIPDigitmapInstance InstanceID="3" DMName="dmmEmg" DigitmapType="Emergent" DigitMap="" DigitMapStartTimer="20" DigitMapShortTimer="5" DigitMapLongTimer="10" MatchMode="Default"/>
+</X_HW_SIPDigitmap>
 <X_HW_LswPortInfo>
 <EthPort NumberOfInstances="5">
 <EthPortInstance InstanceID="1" EthLogicPortID="5" EthPhyPortID="0x100001" PortType="1"/>
@@ -1701,6 +1709,14 @@
 </LedStatusInstance>
 <LedStatusInstance InstanceID="11" LedTotal="1">
 <LedNum NumberOfInstances="1">
+  
+<X_HW_SIPSrvLogicInstance InstanceID="361" SrvLogicBody="SN=17,SS=4,LS=2,EVT=1,OSS=0,OEVT=16:17:19,ACT=11,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="362" SrvLogicBody="SN=17,SS=4,LS=2,EVT=2,OSS=0,OEVT=16:17:19,ACT=11,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="363" SrvLogicBody="SN=17,SS=4,LS=2,EVT=18,OSS=11,OEVT=19:26:28,ACT=23:28:20,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="364" SrvLogicBody="SN=17,SS=4,LS=2,EVT=20,OSS=9,OEVT=18:23:26:16,ACT=41:22,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="365" SrvLogicBody="SN=17,SS=4,LS=2,EVT=26,OSS=4,OEVT=1:2:20:18,ACT=56,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="366" SrvLogicBody="SN=17,SS=4,LS=3,EVT=16,OSS=1,OEVT=18:16:25:26,ACT=23:28,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="367" SrvLogicBody="SN=17,SS=4,LS=3,EVT=18,OSS=11,OEVT=19:26:28,ACT=23:28:4:45:37:20,TIMERLEN=0;
 <LedNumInstance InstanceID="1" LedId="1" LedColor="0" LedFrequence="0" LedName="LOS"/>
 </LedNum>
 </LedStatusInstance>
@@ -1768,7 +1784,21 @@
 </PriorityQueue>
 </X_HW_UplinkQos>
 <X_HW_WifiCoverService AutoExtended="1" AutoExtendedPolicy="0" AutoExtendedSSIDIndex="1" IspExtended="0" AutoSwitchAP="1" ForcedSwitchThrehold="-79" Enable="1" ConditionalSwitchThrehold="-75" SyncWifiSwitch="0">
-<ConfigurationByRadio NumberOfInstances="1">
+<ConfigurationByRadio NumberOfInstances="1">                                           
+
+<VoiceProfileInstance InstanceID="4294967294" Name="" SignalingProtocol="" Region="ID" DTMFMethod="InBand" DigitMap="" X_HW_DigitMapMatchMode="Min" X_HW_PortName="" X_HW_OverseaVer="0" X_HW_HowlerSendFlag="1" DigitMapEnable="1" Enable="Enabled" X_HW_KeepTransferActivePeriod="0" X_HW_ServerType="" X_HW_Option120PriorityMode="1">
+<SIP ProxyServer="" ProxyServerPort="5060" ProxyServerTransport="UDP" X_HW_SecondaryProxyServer="" X_HW_SecondaryProxyServerPort="5060" X_HW_SecondaryProxyServerTransport="" RegistrarServer="" RegistrarServerPort="5060" RegistrarServerTransport="UDP" X_HW_SecondaryRegistrarServer="" X_HW_SecondaryRegistrarServerPort="5060" X_HW_SecondaryRegistrarServerTransport="UDP" OutboundProxy="" OutboundProxyPort="5060" X_HW_SecondaryOutboundProxy="" X_HW_SecondaryOutboundProxyPort="5060" UserAgentDomain="" UserAgentPort="5060" UserAgentTransport="" VLANIDMark="" EthernetPriorityMark="-1" X_HW_802-1pMark="" DSCPMark="26" Organization="" RegistrationPeriod="600" TimerT1="500" TimerT2="4000" TimerT4="5000" RegisterRetryInterval="30" InboundAuthUsername="" InboundAuthPassword="" UseCodecPriorityInSDPResponse="0" SIPResponseMapNumberOfElements="0" X_HW_EmergencyDSCPMark="-1">
+<ResponseMap NumberOfInstances="2">
+<ResponseMapInstance InstanceID="1" SIPResponseNumber="100" Tone="0" X_HW_Duration="60"/>
+<ResponseMapInstance InstanceID="2" SIPResponseNumber="493" Tone="1" X_HW_Duration="60"/>
+</ResponseMap>
+                                                                                       
+<X_HW_SIPSrvLogicInstance InstanceID="427" SrvLogicBody="SN=18,SS=4,LS=3,EVT=18,OSS=11,OEVT=19:26:28,ACT=23:28:4:45:37:20,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="428" SrvLogicBody="SN=18,SS=4,LS=3,EVT=20,OSS=9,OEVT=18:16:23:26:25,ACT=9:22,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="429" SrvLogicBody="SN=18,SS=4,LS=3,EVT=25,OSS=9,OEVT=18:16:23:26,ACT=23:28:4:45:22,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="430" SrvLogicBody="SN=18,SS=4,LS=3,EVT=26,OSS=4,OEVT=18:16:0:1:2:3:64:20:25,ACT=56,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="431" SrvLogicBody="SN=18,SS=4,LS=3,EVT=64,OSS=12,OEVT=18:30:31:26:25,ACT=15,TIMERLEN=0;"/>
+<X_HW_SIPSrvLogicInstance InstanceID="432" SrvLogicBody="SN=18,SS=8,LS=2,EVT=16,OSS=0,OEVT=16:17:19,ACT=47,TIMERLEN=0;"/>
 <ConfigurationByRadioInstance InstanceID="1" RFBand="2.4G" AutoExtendedSSIDIndex="1"/>
 </ConfigurationByRadio>
 </X_HW_WifiCoverService>
